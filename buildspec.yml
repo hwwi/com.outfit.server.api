@@ -1,0 +1,23 @@
+﻿version: 0.2
+phases:
+  install:
+    runtime-versions:
+      dotnet: 3.1
+  pre_build:
+    commands:
+      - pip install --upgrade awscli
+      - dotnet restore Api/Api.csproj
+#      - dotnet restore AspNetCoreWebServiceTest/AspNetCoreWebServiceTest.csproj
+  build:
+    commands:
+      - dotnet publish -c release -o ./build_output Api/Api.csproj
+#      - dotnet publish -c release -o ./test_output AspNetCoreWebServiceTest/AspNetCoreWebServiceTest.csproj
+#      - dotnet vstest Api/bin/release/netcoreapp3.0/Api.dll
+#  post_build:
+artifacts:
+  files:
+#    - template.yml
+    - Api/bin/**/*
+    - scripts/**/*
+    - appspec.yml
+#    - template-configuration.json

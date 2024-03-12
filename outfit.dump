@@ -1,0 +1,703 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 11.5
+-- Dumped by pg_dump version 12.1
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: EntityFrameworkHiLoSequence; Type: SEQUENCE; Schema: public; Owner: odmin
+--
+
+CREATE SEQUENCE public."EntityFrameworkHiLoSequence"
+    START WITH 1
+    INCREMENT BY 10
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public."EntityFrameworkHiLoSequence" OWNER TO odmin;
+
+SET default_tablespace = '';
+
+--
+-- Name: __EFMigrationsHistory; Type: TABLE; Schema: public; Owner: odmin
+--
+
+CREATE TABLE public."__EFMigrationsHistory" (
+    migration_id character varying(150) NOT NULL,
+    product_version character varying(32) NOT NULL
+);
+
+
+ALTER TABLE public."__EFMigrationsHistory" OWNER TO odmin;
+
+--
+-- Name: brand; Type: TABLE; Schema: public; Owner: odmin
+--
+
+CREATE TABLE public.brand (
+    id bigint NOT NULL,
+    created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp with time zone,
+    code text NOT NULL
+);
+
+
+ALTER TABLE public.brand OWNER TO odmin;
+
+--
+-- Name: comment; Type: TABLE; Schema: public; Owner: odmin
+--
+
+CREATE TABLE public.comment (
+    id bigint NOT NULL,
+    created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp with time zone,
+    text character varying(300) NOT NULL,
+    shot_id bigint NOT NULL,
+    person_id bigint NOT NULL
+);
+
+
+ALTER TABLE public.comment OWNER TO odmin;
+
+--
+-- Name: follow_person; Type: TABLE; Schema: public; Owner: odmin
+--
+
+CREATE TABLE public.follow_person (
+    id bigint NOT NULL,
+    created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp with time zone,
+    follower_id bigint NOT NULL,
+    following_id bigint NOT NULL
+);
+
+
+ALTER TABLE public.follow_person OWNER TO odmin;
+
+--
+-- Name: like_comment; Type: TABLE; Schema: public; Owner: odmin
+--
+
+CREATE TABLE public.like_comment (
+    created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp with time zone,
+    person_id bigint NOT NULL,
+    entity_id bigint NOT NULL
+);
+
+
+ALTER TABLE public.like_comment OWNER TO odmin;
+
+--
+-- Name: like_shot; Type: TABLE; Schema: public; Owner: odmin
+--
+
+CREATE TABLE public.like_shot (
+    created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp with time zone,
+    person_id bigint NOT NULL,
+    entity_id bigint NOT NULL
+);
+
+
+ALTER TABLE public.like_shot OWNER TO odmin;
+
+--
+-- Name: person; Type: TABLE; Schema: public; Owner: odmin
+--
+
+CREATE TABLE public.person (
+    id bigint NOT NULL,
+    created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp with time zone,
+    email text NOT NULL,
+    name character varying(20) NOT NULL,
+    hashed_password text NOT NULL,
+    biography character varying(300) NOT NULL,
+    profile_photo_file jsonb,
+    is_enabled boolean NOT NULL
+);
+
+
+ALTER TABLE public.person OWNER TO odmin;
+
+--
+-- Name: photo; Type: TABLE; Schema: public; Owner: odmin
+--
+
+CREATE TABLE public.photo (
+    id bigint NOT NULL,
+    created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp with time zone,
+    file jsonb NOT NULL,
+    shot_id bigint NOT NULL
+);
+
+
+ALTER TABLE public.photo OWNER TO odmin;
+
+--
+-- Name: product; Type: TABLE; Schema: public; Owner: odmin
+--
+
+CREATE TABLE public.product (
+    id bigint NOT NULL,
+    created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp with time zone,
+    code text NOT NULL,
+    brand_id bigint NOT NULL
+);
+
+
+ALTER TABLE public.product OWNER TO odmin;
+
+--
+-- Name: shot; Type: TABLE; Schema: public; Owner: odmin
+--
+
+CREATE TABLE public.shot (
+    id bigint NOT NULL,
+    created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp with time zone,
+    caption character varying(3000) NOT NULL,
+    person_id bigint NOT NULL
+);
+
+
+ALTER TABLE public.shot OWNER TO odmin;
+
+--
+-- Name: tag; Type: TABLE; Schema: public; Owner: odmin
+--
+
+CREATE TABLE public.tag (
+    id bigint NOT NULL,
+    created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_at timestamp with time zone,
+    x real NOT NULL,
+    y real NOT NULL,
+    product_id bigint NOT NULL,
+    photo_id bigint NOT NULL
+);
+
+
+ALTER TABLE public.tag OWNER TO odmin;
+
+--
+-- Data for Name: __EFMigrationsHistory; Type: TABLE DATA; Schema: public; Owner: odmin
+--
+
+COPY public."__EFMigrationsHistory" (migration_id, product_version) FROM stdin;
+20191130095014_initialCreate	3.0.1
+20191204090942_ModifyLikeRelation	3.0.1
+\.
+
+
+--
+-- Data for Name: brand; Type: TABLE DATA; Schema: public; Owner: odmin
+--
+
+COPY public.brand (id, created_at, updated_at, code) FROM stdin;
+13	2019-12-03 04:50:37.718264+00	\N	b1
+14	2019-12-03 04:50:37.718264+00	\N	b2
+15	2019-12-03 04:50:37.718264+00	\N	b3
+102	2019-12-03 16:43:40.201689+00	\N	b4
+\.
+
+
+--
+-- Data for Name: comment; Type: TABLE DATA; Schema: public; Owner: odmin
+--
+
+COPY public.comment (id, created_at, updated_at, text, shot_id, person_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: follow_person; Type: TABLE DATA; Schema: public; Owner: odmin
+--
+
+COPY public.follow_person (id, created_at, updated_at, follower_id, following_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: like_comment; Type: TABLE DATA; Schema: public; Owner: odmin
+--
+
+COPY public.like_comment (created_at, updated_at, person_id, entity_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: like_shot; Type: TABLE DATA; Schema: public; Owner: odmin
+--
+
+COPY public.like_shot (created_at, updated_at, person_id, entity_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: person; Type: TABLE DATA; Schema: public; Owner: odmin
+--
+
+COPY public.person (id, created_at, updated_at, email, name, hashed_password, biography, profile_photo_file, is_enabled) FROM stdin;
+1	2019-12-02 09:21:48.756721+00	\N	test_person_1@email.com	test_person_1	AQAAAAEAACcQAAAAECEXHJYDeNTA07CVE3Aui9ZFcNIfXxPdatHGGzBEpLxzNjby7J0IirIRGaODjbluiQ==		\N	t
+2	2019-12-02 09:25:15.19314+00	\N	test_person_2@email.com	test_person_2	AQAAAAEAACcQAAAAEPXx67CB2aI7LSP0jaJc55dYS2yJB51uB+VqPKUI1RWN6AsSeyRwcc9Calf3iD/Z6g==		\N	t
+3	2019-12-02 09:37:21.690992+00	\N	test_person_3@email.com	test_person_3	AQAAAAEAACcQAAAAEFRm22pXKCMP20aLGvjqKXrKBQqaeWVSDEt3gk3xQvPJ3QKdO/kaPYV9BXSa9e3IMQ==		\N	t
+4	2019-12-02 09:38:17.768786+00	\N	test_person_4@email.com	test_person_4	AQAAAAEAACcQAAAAEMzJisfjC28+SYp175mI61Owor5j2ov1KBZyTfO/dps9zWrPkamEt1YSUccjdUtiCw==		\N	t
+5	2019-12-02 09:39:49.721411+00	\N	test_person_5@email.com	test_person_5	AQAAAAEAACcQAAAAEPT88Sl+B5+oHuy7Kt37NNl0v4RzrL3E9wgQ1JUbInv6xumTBmWSHNU9EuK/FvJTyw==		\N	t
+6	2019-12-02 09:40:55.924114+00	\N	test_person_6@email.com	test_person_6	AQAAAAEAACcQAAAAEOva5ODMi1gY39sCu3hRVWOpnKgICsQUqKfI2lC81W2mueCpp2AIKajd11P9jG8mmw==		\N	t
+7	2019-12-02 09:41:37.251983+00	\N	test_person_7@email.com	test_person_7	AQAAAAEAACcQAAAAEHGMaVpISoeiuAYUnRKY8UYA98WUIM200SWyLo8WY453ZOkkCAX/ITsEJeI3aWpwdQ==		\N	t
+\.
+
+
+--
+-- Data for Name: photo; Type: TABLE DATA; Schema: public; Owner: odmin
+--
+
+COPY public.photo (id, created_at, updated_at, file, shot_id) FROM stdin;
+12	2019-12-03 04:49:24.156243+00	\N	{"Key": "1/2019-12-03T04:49:24+00:00_0.jpg", "Container": "shots"}	11
+20	2019-12-03 04:50:37.718264+00	\N	{"Key": "1/2019-12-03T04:50:38+00:00_0.jpg", "Container": "shots"}	19
+24	2019-12-03 04:50:37.718264+00	\N	{"Key": "1/2019-12-03T04:50:38+00:00_1.jpg", "Container": "shots"}	19
+28	2019-12-03 04:59:36.341484+00	\N	{"Key": "1/2019-12-03T04:59:36+00:00_0.jpg", "Container": "shots"}	27
+32	2019-12-03 04:59:36.341484+00	\N	{"Key": "1/2019-12-03T04:59:36+00:00_1.jpg", "Container": "shots"}	27
+44	2019-12-03 15:22:07.841708+00	\N	{"Key": "1/2019-12-03T15:22:08+00:00_0.jpg", "Container": "shots"}	43
+48	2019-12-03 15:22:07.841708+00	\N	{"Key": "1/2019-12-03T15:22:08+00:00_1.jpg", "Container": "shots"}	43
+52	2019-12-03 16:00:27.943277+00	\N	{"Key": "1/2019-12-03T16:00:27+00:00_0.jpg", "Container": "shots"}	51
+54	2019-12-03 16:01:17.365093+00	\N	{"Key": "1/2019-12-03T16:01:17+00:00_0.jpg", "Container": "shots"}	53
+57	2019-12-03 16:01:17.365093+00	\N	{"Key": "1/2019-12-03T16:01:17+00:00_1.jpg", "Container": "shots"}	53
+61	2019-12-03 16:03:51.302644+00	\N	{"Key": "1/2019-12-03T16:03:51+00:00_0.jpg", "Container": "shots"}	60
+63	2019-12-03 16:04:06.271252+00	\N	{"Key": "1/2019-12-03T16:04:06+00:00_0.jpg", "Container": "shots"}	62
+65	2019-12-03 16:05:20.443018+00	\N	{"Key": "1/2019-12-03T16:05:20+00:00_0.jpg", "Container": "shots"}	64
+67	2019-12-03 16:05:34.880445+00	\N	{"Key": "1/2019-12-03T16:05:34+00:00_0.jpg", "Container": "shots"}	66
+69	2019-12-03 16:06:25.896112+00	\N	{"Key": "1/2019-12-03T16:06:25+00:00_0.jpg", "Container": "shots"}	68
+71	2019-12-03 16:10:27.817526+00	\N	{"Key": "1/2019-12-03T16:10:27+00:00_0.jpg", "Container": "shots"}	70
+73	2019-12-03 16:11:25.207773+00	\N	{"Key": "1/2019-12-03T16:11:25+00:00_0.jpg", "Container": "shots"}	72
+75	2019-12-03 16:12:42.410432+00	\N	{"Key": "1/2019-12-03T16:12:42+00:00_0.jpg", "Container": "shots"}	74
+77	2019-12-03 16:14:39.222181+00	\N	{"Key": "1/2019-12-03T16:14:39+00:00_0.jpg", "Container": "shots"}	76
+79	2019-12-03 16:15:29.737548+00	\N	{"Key": "1/2019-12-03T16:15:29+00:00_0.jpg", "Container": "shots"}	78
+81	2019-12-03 16:15:45.971814+00	\N	{"Key": "1/2019-12-03T16:15:45+00:00_0.jpg", "Container": "shots"}	80
+85	2019-12-03 16:25:15.439372+00	\N	{"Key": "1/2019-12-03T16:25:15+00:00_0.jpg", "Container": "shots"}	84
+89	2019-12-03 16:29:14.032228+00	\N	{"Key": "1/2019-12-03T16:29:14+00:00_0.jpg", "Container": "shots"}	88
+93	2019-12-03 16:30:24.453705+00	\N	{"Key": "1/2019-12-03T16:30:24+00:00_0.jpg", "Container": "shots"}	92
+97	2019-12-03 16:34:31.514902+00	\N	{"Key": "1/2019-12-03T16:34:31+00:00_0.jpg", "Container": "shots"}	96
+100	2019-12-03 16:38:58.545838+00	\N	{"Key": "1/2019-12-03T16:38:58+00:00_0.jpg", "Container": "shots"}	99
+105	2019-12-03 16:43:40.201689+00	\N	{"Key": "1/2019-12-03T16:43:40+00:00_0.jpg", "Container": "shots"}	104
+109	2019-12-03 16:47:19.52859+00	\N	{"Key": "1/2019-12-03T16:47:19+00:00_0.jpg", "Container": "shots"}	108
+112	2019-12-03 16:52:27.761385+00	\N	{"Key": "1/2019-12-03T16:52:27+00:00_0.jpg", "Container": "shots"}	111
+114	2019-12-03 16:52:51.026921+00	\N	{"Key": "1/2019-12-03T16:52:51+00:00_0.jpg", "Container": "shots"}	113
+116	2019-12-03 16:54:45.573686+00	\N	{"Key": "1/2019-12-03T16:54:45+00:00_0.jpg", "Container": "shots"}	115
+122	2019-12-03 17:18:03.616603+00	\N	{"Key": "1/2019-12-03T17:18:03+00:00_0.jpg", "Container": "shots"}	121
+\.
+
+
+--
+-- Data for Name: product; Type: TABLE DATA; Schema: public; Owner: odmin
+--
+
+COPY public.product (id, created_at, updated_at, code, brand_id) FROM stdin;
+18	2019-12-03 04:50:37.718264+00	\N	p3	15
+17	2019-12-03 04:50:37.718264+00	\N	p2	14
+16	2019-12-03 04:50:37.718264+00	\N	p1	13
+25	2019-12-03 04:59:36.341484+00	\N	p2	13
+26	2019-12-03 04:59:36.341484+00	\N	p3	13
+41	2019-12-03 15:22:07.841708+00	\N	p4	13
+42	2019-12-03 15:22:07.841708+00	\N	p1	14
+82	2019-12-03 16:25:15.439372+00	\N	p7	13
+83	2019-12-03 16:25:15.439372+00	\N	p7	15
+91	2019-12-03 16:30:24.453705+00	\N	p4	15
+103	2019-12-03 16:43:40.201689+00	\N	p3	102
+107	2019-12-03 16:47:19.52859+00	\N	p8	14
+\.
+
+
+--
+-- Data for Name: shot; Type: TABLE DATA; Schema: public; Owner: odmin
+--
+
+COPY public.shot (id, created_at, updated_at, caption, person_id) FROM stdin;
+11	2019-12-03 04:49:24.156243+00	\N		1
+19	2019-12-03 04:50:37.718264+00	\N	test caption ><	1
+27	2019-12-03 04:59:36.341484+00	\N	babyyyy	1
+43	2019-12-03 15:22:07.841708+00	\N	d_D	1
+51	2019-12-03 16:00:27.943277+00	\N		1
+53	2019-12-03 16:01:17.365093+00	\N	test	1
+60	2019-12-03 16:03:51.302644+00	\N		1
+62	2019-12-03 16:04:06.271252+00	\N		1
+64	2019-12-03 16:05:20.443018+00	\N		1
+66	2019-12-03 16:05:34.880445+00	\N		1
+68	2019-12-03 16:06:25.896112+00	\N		1
+70	2019-12-03 16:10:27.817526+00	\N		1
+72	2019-12-03 16:11:25.207773+00	\N		1
+74	2019-12-03 16:12:42.410432+00	\N		1
+76	2019-12-03 16:14:39.222181+00	\N		1
+78	2019-12-03 16:15:29.737548+00	\N		1
+80	2019-12-03 16:15:45.971814+00	\N		1
+84	2019-12-03 16:25:15.439372+00	\N		1
+88	2019-12-03 16:29:14.032228+00	\N		1
+92	2019-12-03 16:30:24.453705+00	\N		1
+96	2019-12-03 16:34:31.514902+00	\N		1
+99	2019-12-03 16:38:58.545838+00	\N		1
+104	2019-12-03 16:43:40.201689+00	\N		1
+108	2019-12-03 16:47:19.52859+00	\N	ttt	1
+111	2019-12-03 16:52:27.761385+00	\N		1
+113	2019-12-03 16:52:51.026921+00	\N		1
+115	2019-12-03 16:54:45.573686+00	\N		1
+121	2019-12-03 17:18:03.616603+00	\N		1
+\.
+
+
+--
+-- Data for Name: tag; Type: TABLE DATA; Schema: public; Owner: odmin
+--
+
+COPY public.tag (id, created_at, updated_at, x, y, product_id, photo_id) FROM stdin;
+21	2019-12-03 04:50:37.718264+00	\N	0.237318978	0.40681994	16	20
+22	2019-12-03 04:50:37.718264+00	\N	0.686739683	0.40615505	17	20
+23	2019-12-03 04:50:37.718264+00	\N	0.124790601	0.798543274	18	20
+29	2019-12-03 04:59:36.341484+00	\N	0.636330366	0.626085043	25	28
+30	2019-12-03 04:59:36.341484+00	\N	0.826881647	0.915459514	26	28
+31	2019-12-03 04:59:36.341484+00	\N	0.0664049685	0.108710393	16	28
+45	2019-12-03 15:22:07.841708+00	\N	0.666625977	0.820735693	16	44
+46	2019-12-03 15:22:07.841708+00	\N	0.771270752	0.167985022	41	44
+47	2019-12-03 15:22:07.841708+00	\N	0.113861084	0.545751929	42	44
+55	2019-12-03 16:01:17.365093+00	\N	0.513847351	0.440877289	16	54
+56	2019-12-03 16:01:17.365093+00	\N	0.95999527	0.94896102	41	54
+58	2019-12-03 16:01:17.365093+00	\N	0.466983795	0.492960602	16	57
+59	2019-12-03 16:01:17.365093+00	\N	0.578048706	0.501098633	42	57
+86	2019-12-03 16:25:15.439372+00	\N	0.334228516	0.501327574	82	85
+87	2019-12-03 16:25:15.439372+00	\N	0.533294678	0.746028185	83	85
+90	2019-12-03 16:29:14.032228+00	\N	0.496452332	0.626085043	18	89
+94	2019-12-03 16:30:24.453705+00	\N	0.611999512	0.636953652	42	93
+95	2019-12-03 16:30:24.453705+00	\N	0.43145752	0.66915977	91	93
+98	2019-12-03 16:34:31.514902+00	\N	0.400909424	0.483251959	42	97
+101	2019-12-03 16:38:58.545838+00	\N	0.43145752	0.609483361	42	100
+106	2019-12-03 16:43:40.201689+00	\N	0.413139343	0.561252177	103	105
+110	2019-12-03 16:47:19.52859+00	\N	0.536392212	0.460611969	107	109
+\.
+
+
+--
+-- Name: EntityFrameworkHiLoSequence; Type: SEQUENCE SET; Schema: public; Owner: odmin
+--
+
+SELECT pg_catalog.setval('public."EntityFrameworkHiLoSequence"', 141, true);
+
+
+--
+-- Name: __EFMigrationsHistory PK___EFMigrationsHistory; Type: CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public."__EFMigrationsHistory"
+    ADD CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY (migration_id);
+
+
+--
+-- Name: brand PK_brand; Type: CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.brand
+    ADD CONSTRAINT "PK_brand" PRIMARY KEY (id);
+
+
+--
+-- Name: comment PK_comment; Type: CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.comment
+    ADD CONSTRAINT "PK_comment" PRIMARY KEY (id);
+
+
+--
+-- Name: follow_person PK_follow_person; Type: CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.follow_person
+    ADD CONSTRAINT "PK_follow_person" PRIMARY KEY (id);
+
+
+--
+-- Name: like_comment PK_like_comment; Type: CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.like_comment
+    ADD CONSTRAINT "PK_like_comment" PRIMARY KEY (person_id, entity_id);
+
+
+--
+-- Name: like_shot PK_like_shot; Type: CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.like_shot
+    ADD CONSTRAINT "PK_like_shot" PRIMARY KEY (person_id, entity_id);
+
+
+--
+-- Name: person PK_person; Type: CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.person
+    ADD CONSTRAINT "PK_person" PRIMARY KEY (id);
+
+
+--
+-- Name: photo PK_photo; Type: CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.photo
+    ADD CONSTRAINT "PK_photo" PRIMARY KEY (id);
+
+
+--
+-- Name: product PK_product; Type: CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.product
+    ADD CONSTRAINT "PK_product" PRIMARY KEY (id);
+
+
+--
+-- Name: shot PK_shot; Type: CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.shot
+    ADD CONSTRAINT "PK_shot" PRIMARY KEY (id);
+
+
+--
+-- Name: tag PK_tag; Type: CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.tag
+    ADD CONSTRAINT "PK_tag" PRIMARY KEY (id);
+
+
+--
+-- Name: IX_brand_code; Type: INDEX; Schema: public; Owner: odmin
+--
+
+CREATE UNIQUE INDEX "IX_brand_code" ON public.brand USING btree (code);
+
+
+--
+-- Name: IX_comment_person_id; Type: INDEX; Schema: public; Owner: odmin
+--
+
+CREATE INDEX "IX_comment_person_id" ON public.comment USING btree (person_id);
+
+
+--
+-- Name: IX_comment_shot_id; Type: INDEX; Schema: public; Owner: odmin
+--
+
+CREATE INDEX "IX_comment_shot_id" ON public.comment USING btree (shot_id);
+
+
+--
+-- Name: IX_follow_person_follower_id; Type: INDEX; Schema: public; Owner: odmin
+--
+
+CREATE INDEX "IX_follow_person_follower_id" ON public.follow_person USING btree (follower_id);
+
+
+--
+-- Name: IX_follow_person_following_id; Type: INDEX; Schema: public; Owner: odmin
+--
+
+CREATE INDEX "IX_follow_person_following_id" ON public.follow_person USING btree (following_id);
+
+
+--
+-- Name: IX_like_comment_entity_id; Type: INDEX; Schema: public; Owner: odmin
+--
+
+CREATE INDEX "IX_like_comment_entity_id" ON public.like_comment USING btree (entity_id);
+
+
+--
+-- Name: IX_like_shot_entity_id; Type: INDEX; Schema: public; Owner: odmin
+--
+
+CREATE INDEX "IX_like_shot_entity_id" ON public.like_shot USING btree (entity_id);
+
+
+--
+-- Name: IX_person_email; Type: INDEX; Schema: public; Owner: odmin
+--
+
+CREATE UNIQUE INDEX "IX_person_email" ON public.person USING btree (email);
+
+
+--
+-- Name: IX_person_name; Type: INDEX; Schema: public; Owner: odmin
+--
+
+CREATE UNIQUE INDEX "IX_person_name" ON public.person USING btree (name);
+
+
+--
+-- Name: IX_photo_file; Type: INDEX; Schema: public; Owner: odmin
+--
+
+CREATE UNIQUE INDEX "IX_photo_file" ON public.photo USING btree (file);
+
+
+--
+-- Name: IX_photo_shot_id; Type: INDEX; Schema: public; Owner: odmin
+--
+
+CREATE INDEX "IX_photo_shot_id" ON public.photo USING btree (shot_id);
+
+
+--
+-- Name: IX_product_brand_id_code; Type: INDEX; Schema: public; Owner: odmin
+--
+
+CREATE UNIQUE INDEX "IX_product_brand_id_code" ON public.product USING btree (brand_id, code);
+
+
+--
+-- Name: IX_shot_person_id; Type: INDEX; Schema: public; Owner: odmin
+--
+
+CREATE INDEX "IX_shot_person_id" ON public.shot USING btree (person_id);
+
+
+--
+-- Name: IX_tag_photo_id_x_y; Type: INDEX; Schema: public; Owner: odmin
+--
+
+CREATE UNIQUE INDEX "IX_tag_photo_id_x_y" ON public.tag USING btree (photo_id, x, y);
+
+
+--
+-- Name: IX_tag_product_id; Type: INDEX; Schema: public; Owner: odmin
+--
+
+CREATE INDEX "IX_tag_product_id" ON public.tag USING btree (product_id);
+
+
+--
+-- Name: comment FK_comment_person_person_id; Type: FK CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.comment
+    ADD CONSTRAINT "FK_comment_person_person_id" FOREIGN KEY (person_id) REFERENCES public.person(id) ON DELETE CASCADE;
+
+
+--
+-- Name: comment FK_comment_shot_shot_id; Type: FK CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.comment
+    ADD CONSTRAINT "FK_comment_shot_shot_id" FOREIGN KEY (shot_id) REFERENCES public.shot(id) ON DELETE CASCADE;
+
+
+--
+-- Name: follow_person FK_follow_person_person_follower_id; Type: FK CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.follow_person
+    ADD CONSTRAINT "FK_follow_person_person_follower_id" FOREIGN KEY (follower_id) REFERENCES public.person(id) ON DELETE CASCADE;
+
+
+--
+-- Name: follow_person FK_follow_person_person_following_id; Type: FK CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.follow_person
+    ADD CONSTRAINT "FK_follow_person_person_following_id" FOREIGN KEY (following_id) REFERENCES public.person(id) ON DELETE CASCADE;
+
+
+--
+-- Name: like_comment FK_like_comment_comment_entity_id; Type: FK CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.like_comment
+    ADD CONSTRAINT "FK_like_comment_comment_entity_id" FOREIGN KEY (entity_id) REFERENCES public.comment(id) ON DELETE CASCADE;
+
+
+--
+-- Name: like_comment FK_like_comment_person_person_id; Type: FK CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.like_comment
+    ADD CONSTRAINT "FK_like_comment_person_person_id" FOREIGN KEY (person_id) REFERENCES public.person(id) ON DELETE CASCADE;
+
+
+--
+-- Name: like_shot FK_like_shot_person_person_id; Type: FK CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.like_shot
+    ADD CONSTRAINT "FK_like_shot_person_person_id" FOREIGN KEY (person_id) REFERENCES public.person(id) ON DELETE CASCADE;
+
+
+--
+-- Name: like_shot FK_like_shot_shot_entity_id; Type: FK CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.like_shot
+    ADD CONSTRAINT "FK_like_shot_shot_entity_id" FOREIGN KEY (entity_id) REFERENCES public.shot(id) ON DELETE CASCADE;
+
+
+--
+-- Name: photo FK_photo_shot_shot_id; Type: FK CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.photo
+    ADD CONSTRAINT "FK_photo_shot_shot_id" FOREIGN KEY (shot_id) REFERENCES public.shot(id) ON DELETE CASCADE;
+
+
+--
+-- Name: product FK_product_brand_brand_id; Type: FK CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.product
+    ADD CONSTRAINT "FK_product_brand_brand_id" FOREIGN KEY (brand_id) REFERENCES public.brand(id) ON DELETE CASCADE;
+
+
+--
+-- Name: shot FK_shot_person_person_id; Type: FK CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.shot
+    ADD CONSTRAINT "FK_shot_person_person_id" FOREIGN KEY (person_id) REFERENCES public.person(id) ON DELETE CASCADE;
+
+
+--
+-- Name: tag FK_tag_photo_photo_id; Type: FK CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.tag
+    ADD CONSTRAINT "FK_tag_photo_photo_id" FOREIGN KEY (photo_id) REFERENCES public.photo(id) ON DELETE CASCADE;
+
+
+--
+-- Name: tag FK_tag_product_product_id; Type: FK CONSTRAINT; Schema: public; Owner: odmin
+--
+
+ALTER TABLE ONLY public.tag
+    ADD CONSTRAINT "FK_tag_product_product_id" FOREIGN KEY (product_id) REFERENCES public.product(id) ON DELETE CASCADE;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

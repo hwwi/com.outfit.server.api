@@ -1,0 +1,2 @@
+﻿환경변수
+ - GOOGLE_APPLICATION_CREDENTIALS : firebase 인증서

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <data name="Verification request not exists." xml:space="preserve">
+        <value>확인 요청이 없습니다.</value>
+    </data>
+    <data name="Verification request info is not match." xml:space="preserve">
+        <value>확인 요청 정보가 일치하지 않습니다.</value>
+    </data>
+    <data name="Verification Code is not the same." xml:space="preserve">
+        <value>확인 코드가 동일하지 않습니다.</value>
+    </data>
+    <data name="Request was temporarily blocked due to a large number of confirmation requests. Please try again later."
+          xml:space="preserve">
+        <value>확인 요청이 많아 요청이 일시적으로 차단되었습니다. 나중에 다시 시도하십시오.</value>
+    </data>
+    <data name="There is no verification history." xml:space="preserve">
+        <value>확인 내역이 없습니다.</value>
+    </data>
+    <data name="The {0} field is required." xml:space="preserve">
+        <value>{0} 필드는 필수입니다.</value>
+    </data>
+    <data name="Phone number not valid." xml:space="preserve">
+        <value>전화 번호가 유효하지 않습니다.</value>
+    </data>
+    <data name="Can't send SMS to phone number." xml:space="preserve">
+        <value>전화 번호로 SMS를 보낼 수 없습니다.</value>
+    </data>
+    <data name="The {0} is not in E164 format." xml:space="preserve">
+        <value>{0}는 E164 형식이 아닙니다.</value>
+    </data>
+    <data name="Email address not valid." xml:space="preserve">
+        <value>이메일 주소가 유효하지 않습니다.</value>
+    </data>
+    <data name="The {0} field is not a valid uuid." xml:space="preserve">
+        <value>{0} 필드는 유효한 uuid가 아닙니다.</value>
+    </data>
+    <data name="The {0} field must be alphanumeric." xml:space="preserve">
+        <value>{0} 필드는 영숫자(a-z,A-Z,0-9) 여야합니다.</value>
+    </data>
+    <data name="The {0} field must be upper alphanumeric." xml:space="preserve">
+        <value>{0} 필드는 대문자 영문 또는 숫자(A-Z,0-9) 여야합니다.</value>
+    </data>
+    <data name="The verification information is wrong." xml:space="preserve">
+        <value>확인 정보가 잘못되었습니다.</value>
+    </data>
+    <data name="Verification has expired. Please verificate again." xml:space="preserve">
+        <value>확인이 만료되었습니다. 다시 확인하십시오.</value>
+    </data>
+    <data name="The {0} is already used." xml:space="preserve">
+        <value>{0}은 (는) 이미 사용 중입니다.</value>
+    </data>
+    <data name="The {0} is not exist." xml:space="preserve">
+        <value>{0}이 (가) 존재하지 않습니다.</value>
+    </data>
+    <data name="User not found." xml:space="preserve">
+        <value>사용자를 찾을 수 없습니다.</value>
+    </data>
+    <data name="User does not exist." xml:space="preserve">
+        <value>사용자가 존재하지 않습니다.</value>
+    </data>
+    <data name="The name can be changed once every {0} days. (Last changed at {1})" xml:space="preserve">
+        <value>이름은 {0} 일에 한 번 변경할 수 있습니다. ({1}에 마지막으로 변경됨)</value>
+    </data>
+    <data name="Already deleted." xml:space="preserve">
+        <value>이미 삭제되었습니다.</value>
+    </data>
+    <data name="Not exist user or password incorrect." xml:space="preserve">
+        <value>존재하지 않는 사용자 또는 비밀번호가 올바르지 않습니다.</value>
+    </data>
+    <data name="AppUuid is null or empty." xml:space="preserve">
+        <value>AppUuid가 null이거나 비어 있습니다.</value>
+    </data>
+    <data name="Not exists person." xml:space="preserve">
+        <value>존재하지 않는 사람입니다.</value>
+    </data>
+    <data name="Current password is incorrect." xml:space="preserve">
+        <value>현재 암호가 맞지 않습니다.</value>
+    </data>
+    <data name="Not exist comment." xml:space="preserve">
+        <value>존재하지 않은 댓글입니다.</value>
+    </data>
+    <data name="Can't find parent comment." xml:space="preserve">
+        <value>부모 댓글을 찾을 수 없습니다.</value>
+    </data>
+    <data name="Can't self follow." xml:space="preserve">
+        <value>스스로 팔로우할 수 없습니다.</value>
+    </data>
+    <data name="Not supported image format({0})." xml:space="preserve">
+        <value>지원되지 않는 이미지 형식 ({0})입니다.</value>
+    </data>
+    <data name="Either 'Email' or 'PhoneNumber' must not be empty." xml:space="preserve">
+        <value>'이메일'또는 '전화번호'는 비워 둘 수 없습니다.</value>
+    </data>
+    <data name="Already exists name." xml:space="preserve">
+        <value>이미 존재하는 이름입니다.</value>
+    </data>
+    <data name="Already exists email." xml:space="preserve">
+        <value>이미 존재하는 이메일입니다.</value>
+    </data>
+    <data name="Already exists phone number." xml:space="preserve">
+        <value>이미 존재하는 전화 번호입니다.</value>
+    </data>
+    <data name="Not verified." xml:space="preserve">
+        <value>확인되지 않았습니다.</value>
+    </data>
+    <data name="File not attached." xml:space="preserve">
+        <value>파일이 첨부되지 않았습니다.</value>
+    </data>
+    <data name="Tag not matched then files." xml:space="preserve">
+        <value>태그와 파일이 일치하지 않습니다.</value>
+    </data>
+    <data name="Must be between {0} and {1} characters long." xml:space="preserve">
+        <value>{0} ~ {1} 자 사이 여야합니다.</value>
+    </data>
+    <data name="Must use at least one alphabet and underscore." xml:space="preserve">
+        <value>하나 이상의 알파벳과 밑줄을 사용해야합니다.</value>
+    </data>
+    <data name="Continuous underscore is not allowed." xml:space="preserve">
+        <value>연속 밑줄은 허용되지 않습니다.</value>
+    </data>
+    <data name="Only lowercase alphanumeric or underscore characters(a-z,0-9,_) allowed." xml:space="preserve">
+        <value>소문자 영숫자 또는 밑줄 문자 (a-z, 0-9, _) 만 허용됩니다.</value>
+    </data>
+    <data name="Must be string." xml:space="preserve">
+        <value>문자열이어야합니다.</value>
+    </data>
+    <data name="The aspect ratio of the attached photo is not supported." xml:space="preserve">
+        <value>첨부 된 사진의 화면비는 지원되지 않습니다.</value>
+    </data>
+    <data name="The name you want to change is the same as before." xml:space="preserve">
+        <value>변경하려는 이름은 이전과 동일합니다.</value>
+    </data>
+    <data name="Not exists shot." xml:space="preserve">
+        <value>존재하지 않는 샷입니다.</value>
+    </data>
+</root>

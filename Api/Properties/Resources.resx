@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Verification request not exists." xml:space="preserve">
+        <value>Verification request not exists.</value>
+    </data>
+    <data name="Verification request info is not match." xml:space="preserve">
+        <value>Verification request info is not match.</value>
+    </data>
+    <data name="Verification Code is not the same." xml:space="preserve">
+        <value>Verification Code is not the same.</value>
+    </data>
+    <data name="Request was temporarily blocked due to a large number of confirmation requests. Please try again later." xml:space="preserve">
+        <value>Request was temporarily blocked due to a large number of confirmation requests. Please try again later.</value>
+    </data>
+    <data name="There is no verification history." xml:space="preserve">
+        <value>There is no verification history.</value>
+    </data>
+    <data name="The {0} field is required." xml:space="preserve">
+        <value>The {0} field is required.</value>
+    </data>
+    <data name="Phone number not valid." xml:space="preserve">
+        <value>Phone number not valid.</value>
+    </data>
+    <data name="Can't send SMS to phone number." xml:space="preserve">
+        <value>Can't send SMS to phone number.</value>
+    </data>
+    <data name="The {0} is not in E164 format." xml:space="preserve">
+        <value>The {0} is not in E164 format</value>
+    </data>
+    <data name="Email address not valid." xml:space="preserve">
+        <value>Email address not valid.</value>
+    </data>
+    <data name="The {0} field is not a valid uuid." xml:space="preserve">
+        <value>The {0} field is not a valid uuid.</value>
+    </data>
+    <data name="The {0} field must be alphanumeric." xml:space="preserve">
+        <value>The {0} field must be alphanumeric(a-z,A-Z,0-9).</value>
+    </data>
+    <data name="The {0} field must be upper alphanumeric." xml:space="preserve">
+        <value>The {0} field must be upper alphanumeric(A-Z,0-9).</value>
+    </data>
+    <data name="The verification information is wrong." xml:space="preserve">
+        <value>The verification information is wrong.</value>
+    </data>
+    <data name="Verification has expired. Please verificate again." xml:space="preserve">
+        <value>Verification has expired. Please verificate again.</value>
+    </data>
+    <data name="The {0} is already used." xml:space="preserve">
+        <value>The {0} is already used.</value>
+    </data>
+    <data name="The {0} is not exist." xml:space="preserve">
+        <value>The {0} is not exist.</value>
+    </data>
+    <data name="User not found." xml:space="preserve">
+        <value>User not found.</value>
+    </data>
+    <data name="User does not exist." xml:space="preserve">
+        <value>User does not exist.</value>
+    </data>
+    <data name="The name can be changed once every {0} days. (Last changed at {1})" xml:space="preserve">
+        <value>The name can be changed once every {0} days. (Last changed at {1})</value>
+    </data>
+    <data name="Already deleted." xml:space="preserve">
+        <value>Already deleted.</value>
+    </data>
+    <data name="Not exist user or password incorrect." xml:space="preserve">
+        <value>Not exist user or password incorrect.</value>
+    </data>
+    <data name="AppUuid is null or empty." xml:space="preserve">
+        <value>AppUuid is null or empty.</value>
+    </data>
+    <data name="Not exists person." xml:space="preserve">
+        <value>Not exists person.</value>
+    </data>
+    <data name="Current password is incorrect." xml:space="preserve">
+        <value>Current password is incorrect.</value>
+    </data>
+    <data name="Not exist comment." xml:space="preserve">
+        <value>Not exist comment.</value>
+    </data>
+    <data name="Can't find parent comment." xml:space="preserve">
+        <value>Can't find parent comment.</value>
+    </data>
+    <data name="Can't self follow." xml:space="preserve">
+        <value>Can't self follow.</value>
+    </data>
+    <data name="Not supported image format({0})." xml:space="preserve">
+        <value>Not supported image format({0}).</value>
+    </data>
+    <data name="Either 'Email' or 'PhoneNumber' must not be empty." xml:space="preserve">
+        <value>Either 'Email' or 'PhoneNumber' must not be empty.</value>
+    </data>
+    <data name="Already exists name." xml:space="preserve">
+        <value>Already exists name.</value>
+    </data>
+    <data name="Already exists email." xml:space="preserve">
+        <value>Already exists email.</value>
+    </data>
+    <data name="Already exists phone number." xml:space="preserve">
+        <value>Already exists phoneNumber.</value>
+    </data>
+    <data name="Not verified." xml:space="preserve">
+        <value>Not verified.</value>
+    </data>
+    <data name="File not attached." xml:space="preserve">
+        <value>File not attached.</value>
+    </data>
+    <data name="Tag not matched then files." xml:space="preserve">
+        <value>Tag not matched then files.</value>
+    </data>
+    <data name="Must be between {0} and {1} characters long." xml:space="preserve">
+        <value>Must be between {0} and {1} characters long.</value>
+    </data>
+    <data name="Must use at least one alphabet and underscore." xml:space="preserve">
+        <value>Must use at least one alphabet and underscore.</value>
+    </data>
+    <data name="Continuous underscore is not allowed." xml:space="preserve">
+        <value>Continuous underscore is not allowed.</value>
+    </data>
+    <data name="Only lowercase alphanumeric or underscore characters(a-z,0-9,_) allowed." xml:space="preserve">
+        <value>Only lowercase alphanumeric or underscore characters(a-z,0-9,_) allowed.</value>
+    </data>
+    <data name="Must be string." xml:space="preserve">
+        <value>Must be string.</value>
+    </data>
+    <data name="The aspect ratio of the attached photo is not supported." xml:space="preserve">
+        <value>The aspect ratio of the attached photo is not supported.</value>
+    </data>
+    <data name="The name you want to change is the same as before." xml:space="preserve">
+    <value>The name you want to change is the same as before.</value>
+  </data>
+    <data name="Not exists shot." xml:space="preserve">
+        <value>Not exists shot.</value>
+    </data>
+</root>
