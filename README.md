@@ -1,2 +1,8 @@
-﻿환경변수
- - GOOGLE_APPLICATION_CREDENTIALS : firebase 인증서
+﻿# Outfit
+
+Intstagram like OOTD SNS Service, released at 2020
+
+# Related applications
+
+- Backend Api: Here!
+- Frontend Android: [link](https://github.com/hwwi/com.outfit.client.android)
